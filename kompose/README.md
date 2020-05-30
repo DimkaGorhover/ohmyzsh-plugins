@@ -7,3 +7,5 @@ To use it, add `kompose` to the plugins array in your zshrc file:
 ```zsh
 plugins=(... kompose)
 ```
+
+inspired by [ohmyzsh/plugins/kubectl](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl)

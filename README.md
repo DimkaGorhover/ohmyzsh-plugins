@@ -1,7 +1,13 @@
-# oh-my-zsh plugins
+# [oh-my-zsh](http://ohmyz.sh) plugins
 
 ## Plugins
 
-### [kubeadm](./kubeadm)
+* [kubeadm](./kubeadm)
+* [kompose](./kompose)
 
-### [kompose](./kompose)
+## Installation
+
+```sh
+git clone --depth 1 https://github.com/DimkaGorhover/ohmyzsh-plugins.git ~/.ohmyzsh-plugins
+
+```

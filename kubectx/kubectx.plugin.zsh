@@ -9,3 +9,5 @@ if (( $+commands[kubectx] )); then
 
     unset __KUBECTX_COMPLETION_FILE
 fi
+
+alias ktx=kubectx

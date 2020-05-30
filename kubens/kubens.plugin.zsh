@@ -9,3 +9,5 @@ if (( $+commands[kubens] )); then
 
     unset __KUBENS_COMPLETION_FILE
 fi
+
+alias kns=kubens
