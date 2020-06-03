@@ -1,16 +1,21 @@
-oh_my_zsh_dir=$${HOME}/.oh-my-zsh
-ohmyzsh_plugins_dir="$${HOME}/.ohmyzsh-plugins"
+HOME_DIR=$(shell echo $${HOME})
+OH_MY_ZSH_DIR=$(HOME_DIR)/.oh-my-zsh
+OH_MY_ZSH_CACHE_DIR=$(OH_MY_ZSH_DIR)/cache
+OHMYZSH_PLUGINS_DIR=$(HOME_DIR)/.ohmyzsh-plugins
 
-install_sh_file=$(shell pwd)/.install.sh
+__install_sh_file=$(shell pwd)/.install.sh
 
+# .SILENT:
 clean:
-	rm -rf $(ohmyzsh_plugins_dir)
+	rm -rf \
+	$(OHMYZSH_PLUGINS_DIR) \
+	$(OH_MY_ZSH_CACHE_DIR)/kubeadm_completion \
+	$(OH_MY_ZSH_CACHE_DIR)/kompose_completion \
+	$(OH_MY_ZSH_CACHE_DIR)/kubectx_completion \
+	$(OH_MY_ZSH_CACHE_DIR)/kubens_completion
 
 install: clean
-	chmod +x $(install_sh_file) && \
-	$(install_sh_file) \
-		$(oh_my_zsh_dir) \
-		$(ohmyzsh_plugins_dir)
-
-MAKEFLAGS += --silent
-.PHONY: all
+	chmod +x $(__install_sh_file) && \
+	$(__install_sh_file) \
+		$(OH_MY_ZSH_DIR) \
+		$(OHMYZSH_PLUGINS_DIR)
